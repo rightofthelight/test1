@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>食事記録</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1></h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>食事記録</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1></h1>
     
-    <div id="current-date" class="current-date"></div> 
+        <div id="current-date" class="current-date"></div> 
 
-    <div id="calendar" class="calendar-view"></div>
+        <div id="calendar" class="calendar-view"></div>
 
-    <div id="input-page" class="input-page">
-        <h2 id="selected-date"></h2> 
+        <div id="input-page" class="input-page">
 
-        <div class="input-section">
-            <h3>水</h3>
-            <div id="water-boxes" class="box-container"></div>
-        </div>
+            <h2 id="selected-date"></h2>  
 
-        <div class="input-section">
-            <h3>主食</h3>
-            <div id="staple-boxes" class="box-container"></div>
-        </div>
+            
+            <div class="input-box">
+            <div class="input-section">       
+                <div id="water-boxes" class="box-container"></div>
+            </div>
+
+            <div class="input-section">
+                <div id="staple-boxes" class="box-container"></div>
+            </div>
         
-        <div class="input-section">
-            <h3>副菜</h3>
-            <div id="side2-boxes" class="box-container"></div>
-        </div>
+            <div class="input-section">
+                <div id="side2-boxes" class="box-container"></div>
+            </div>
 
-        <div class="input-section">
-            <h3>主菜</h3>
-            <div id="main-boxes" class="box-container"></div>
-        </div>
+            <div class="input-section">
+                <div id="main-boxes" class="box-container"></div>
+            </div>
 
-        <div class="input-section">
-            <h3>牛乳<br>果物</h3>
-            <div>
-            <div id="dairy-boxes" class="box-container"></div>
-            <div id="fruit-boxes" class="box-container"></div>  
-        </div>
-        
+            <div class="input-section">
+                <div id="dairy-boxes" class="box-container"></div>
+                <h4></h4>
+                <div id="fruit-boxes" class="box-container"></div>  
+            </div>
+            </div>
 <!--
         <div class="input-section">
             <h3>牛乳</h3>
@@ -75,12 +73,12 @@
             <h3>果物</h3>
             <div id="fruit-boxes" class="box-container"></div>
         </div>
-    -->        
-    </div>
- <div class="button">
-        <button onclick="saveData()">保存</button>
-        <button onclick="backCalendar()">戻る</button>
+    -->              
+            <div class="button">
+                <button onclick="saveData()">保存</button>
+                <button onclick="backCalendar()">戻る</button>
+            </div>
         </div>
-    <script src="script.js"></script>
-</body>
+        <script src="script.js"></script>
+    </body>
 </html>
