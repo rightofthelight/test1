@@ -4,12 +4,19 @@ body {
     margin: 20px;
 }
 
-h1, h2,  h4 {
+h1, h2{
     text-align: center;
 }
 
-h3{
-    text-align: left;
+h3{ 
+    left: 0px;         
+    margin: 0;          
+    padding: 0;         
+}
+
+h4{
+    margin: 5px;
+    padding: 0px;
 }
 
 .current-date {
@@ -64,25 +71,26 @@ h3{
     text-align: center;
 }
 
+.input-box{
+    padding: 60px;;
+    background: url('inputpage.jpg') no-repeat center center;
+    background-position: 680px 35px;
+    background-size: 432px 388px;
+}
+
 .input-section {
-    margin-top: 0px; 
-    margin-bottom: 0px;
+    margin: 0px; 
+    padding: 0px;
     display: flex; 
     align-items: center; 
     justify-content: center; 
-}
-
-.input-section h3 {
-    margin: 10px; /* 左右のマージンをリセット */
-    margin-right: 10px; 
-    white-space: nowrap; 
-    color: black; 
+    
 }
 
 .box-container {
     display: flex; 
     justify-content: center; 
-    gap: 5px; 
+    gap: 10px; 
     margin-top: 0px; 
     margin-bottom: 0px;
     margin-left: 0px;
@@ -90,10 +98,10 @@ h3{
 }
 
 .box {
-    width: 20px; 
-    height: 30px; 
-    background-color: #ccc; 
-    border: 1px solid #999; 
+    width: 24px; 
+    height: 48px;
+    margin-bottom: 10px; 
+    background-color: #ccc;  
     cursor: pointer; 
 }
 
@@ -101,12 +109,10 @@ h3{
     background-color: #3498db; 
 }
 
-#water-boxes {
-    border: 1px solid #999;
-    border-top: none; 
-}
 
 #water-boxes .box.selected {
+    border: 1px solid #999;
+    border-top: none; 
     background:linear-gradient(transparent 30%, #b3e5fc 30%);
 }
 
@@ -158,12 +164,6 @@ h3{
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-.box-item {
-    display: flex;
-    justify-content: center;
-    gap: 0px;
 }
 
 .box-display-item {
