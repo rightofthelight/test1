@@ -1,7 +1,7 @@
 body {
     text-align: center;
     font-family: Arial, sans-serif;
-    margin: 20px;
+    margin: 5%;
 }
 
 h1, h2{
@@ -15,8 +15,8 @@ h3{
 }
 
 h4{
-    margin: 5px;
-    padding: 0px;
+    margin: 0.2vw;
+    padding: 0;
 }
 
 .current-date {
@@ -45,8 +45,20 @@ h4{
     border: 2px solid red; 
 }
 
+button{
+    writing-mode: horizontal-tb;
+    font-size: 0.6vw;
+    width: 2.4vw;
+    height: 1.5vw;
+}
+
+
 .button{
+    position: relative;
     text-align: center;
+    top: 5vw;
+    left: 0vw;
+
 }
 
 .box-display {
@@ -72,10 +84,18 @@ h4{
 }
 
 .input-box{
-    padding: 60px;
-    background: url('inputpage.jpg') no-repeat;
-    background-position: calc(50% - 38px) calc(50% + 20px);
-    background-size:  25% 100%;
+    margin: 3%;
+    position: relative;
+    position: 60% center;
+} 
+
+.img{
+    position: relative;
+    top: -20.5vw;
+    left: -2vw;
+    width: 21.5vw;
+    height: 21.5vw;
+    z-index: -1;
 }
 
 .input-section {
@@ -90,17 +110,17 @@ h4{
 .box-container {
     display: flex; 
     justify-content: center; 
-    gap: 10px; 
-    margin-top: 0px; 
-    margin-bottom: 0px;
-    margin-left: 0px;
-    margin-right: 0px;
+    gap: 0.2vw; 
+    margin-top: 0; 
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .box {
-    width: 24px; 
-    height: 48px;
-    margin-bottom: 10px; 
+    width: 1.3vw; 
+    height: 2.6vw;
+    margin-top: 5%; 
     background-color: #ccc;  
     cursor: pointer; 
 }
@@ -179,3 +199,4 @@ h4{
 .saturday {
     color: blue;
 }
+
