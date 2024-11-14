@@ -1,77 +1,112 @@
-/* 基本のスタイル */
 body {
     text-align: center;
     font-family: Arial, sans-serif;
     margin: 5%;
 }
 
-h1, h2 {
+h1, h2{
     text-align: center;
 }
 
-h3 {    
-    font-size: 1.2rem; /* vwからremに変更して安定させる */
+h3{    
+    font-size: 1.2vw;     
     margin: 0;          
     padding: 0;         
 }
 
-a {
+a{
     text-decoration: none;
 }
 
-.name-water,
-.name-staple,
-.name-side2,
-.name-main,
-.name-dairy,
-.name-fruit {
+.name-water{
     position: relative;
-    left: 0;
-    margin-top: 20px;
+    left: -15.7vw;
+}
+.name-staple{
+    position: relative;
+    left: -8vw;
+}
+.name-side2{
+    position: relative;
+    left: -9vw;
+}
+.name-main{
+    position: relative;
+    left: -10vw;
+}
+.name-dairy{
+    position: relative;
+    left: -11vw;
+}
+.name-fruit{
+    position: relative;
+    left: -15.7vw;
 }
 
-/* カレンダー表示 */
+h4{
+    margin: 0.2vw;
+    padding: 0;
+}
+
+.current-date ,#selected-date{
+    text-align: center;
+    font-size: 2vw; 
+    font-family:"Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif; 
+    color: #333;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    top: 5vw;
+    left: 50%;
+}
+
 .calendar-view {
     display: grid;
-    grid-template-columns: repeat(7, 1fr); /* 常に7列に固定 */
+    grid-template-columns: repeat(7, 1fr);
     gap: 0;
     width: 100%;
+    height: 80%;
     margin-bottom: 5vw;
 }
 
 .day {
-    border: 1px solid #ccc;
-    padding: 1rem;
+    border: 0.1px solid #ccc;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    padding-left: 0.5vw;
+    padding-right: 0;
     text-align: left;
     cursor: pointer;
 }
 
 .current-day {
-    border: 2px solid red; 
+    border: 0.3vw solid red; 
 }
 
-button {
+
+
+button{
     writing-mode: horizontal-tb;
-    font-size: 1rem; /* 固定のフォントサイズ */
-    width: auto;
-    height: auto;
-    padding: 0.5rem 1rem;
+    font-size: 0.7vw;
+    width: 3vw;
+    height: 1.5vw;
 }
 
-.button {
+
+.button{
     position: relative;
     text-align: center;
+
     top: 5vw;
     left: 0vw;
 }
 
 .box-display {
-    margin-top: 1rem;
+    margin-top: 0.2vw;
     text-align: center;
 }
 
 .box-display span {
-    font-size: 1rem;
+    font-size: 0.5vw;
 }
 
 .empty {
@@ -82,31 +117,35 @@ button {
     color: #3498db; 
 }
 
-/* 入力ページ */
 .input-page {
     display: none;
     text-align: center;
 }
 
+
 .input-section {
-    margin: 0; 
-    padding: 0;
-    gap: 1rem;
+    margin: 0px; 
+    padding: 0px;
+    gap: 0;
     display: flex; 
-    flex-wrap: wrap; /* 横並びから縦並びへ変更 */
+    align-items: center; 
     justify-content: center; 
+    
 }
 
 .box-container {
     display: flex; 
     justify-content: center; 
-    gap: 1rem; 
-    margin-top: 1rem;
+    gap: 0.2vw; 
+    margin-top: 0; 
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .box {
-    width: 4rem;  /* 固定サイズに変更 */
-    height: 8rem;
+    width: 2.2vw; 
+    height: 4.4vw;
     margin-top: 5%; 
     background-color: #ccc;  
     cursor: pointer; 
@@ -115,6 +154,7 @@ button {
 .box.selected {
     background-color: #3498db; 
 }
+
 
 #water-boxes .box.selected {
     border: 1px solid #999;
@@ -142,7 +182,6 @@ button {
     background-color: #bbdefb;
 }
 
-/* カレンダーの色 */
 .calendar-view .water .filled {
     color: #b3e5fc;
 }
@@ -187,133 +226,124 @@ button {
     color: blue;
 }
 
-#triangle1, #triangle2 {
-    font-size: 1rem;
+#triangle1 ,#triangle2{
+    font-size: 1vw;
     margin: 0;
 }
 
-#triangle1 {
+#triangle1{
     position: absolute;
     top: 5.5vw;
     left: 45%;
     z-index: -1;
 }
-
-#triangle2 {
+#triangle2{
     position: absolute;
     top: 5.5vw;
     left: 54%;
     z-index: -1;
 }
-
-.larr {
-    font-size: 2rem;
-    margin: 0.2rem;
+.larr{
+    font-size: 2vw;
+    margin: 0.2vw;
     position: absolute;
     top: 2vw;
     left: 5vw;
 }
+@media screen and (max-width: 479px) { 
+    body {
 
-/* レスポンシブデザイン */
-@media (max-width: 1024px) {
-    /* カレンダーの列数は変更しない */
-    .calendar-view {
-        grid-template-columns: repeat(7, 1fr); /* 7列固定 */
+        transform-origin: top left; /* 拡大の基準を左上に設定 */
+        width: 100%; /* 幅を100%に */
+        height: 100%; /* 高さを100%に */
+        overflow: hidden; /* 拡大によって発生するスクロールバーを隠す */
     }
 
-    .name-water,
-    .name-staple,
-    .name-side2,
-    .name-main,
-    .name-dairy,
-    .name-fruit {
+    .current-date ,#selected-date{
+        font-size: 5vw; 
+    }
+
+    h3{
+        font-size: 4vw;
+    }
+    .box {
+        width: 7vw; 
+        height: 14vw;
+        margin: 1vw;
+        padding: 1vw; 
+        background-color: #ccc;  
+        cursor: pointer; 
+    }
+
+    button{
+        writing-mode: horizontal-tb;
+        font-size: 2vw;
+        width: 10vw;
+        height: 5vw;
+    }
+         
+    .larr{
+        font-size: 5vw;
+        margin: 0.2vw;
+        position: absolute;
+        top: 4vw;
+        left: 7vw;
+    }
+
+    #triangle1 ,#triangle2{
+        font-size: 3vw;
+        margin: 0;
+    }
+    
+    #triangle1{
+        position: absolute;
+        top: 5.5vw;
+        left: 40%;
+        z-index: -1;
+    }
+    #triangle2{
+        position: absolute;
+        top: 5.5vw;
+        left: 65%;
+        z-index: -1;
+    }
+
+    .name-water{
         position: relative;
-        left: 0;
+        left: -45vw;
+    }
+    .name-staple{
+        position: relative;
+        left: -9vw;
+    }
+    .name-side2{
+        position: relative;
+        left: -14vw;
+    }
+    .name-main{
+        position: relative;
+        left: -19vw;
+    }
+    .name-dairy{
+        position: relative;
+        left: -24vw;
+    }
+    .name-fruit{
+        position: relative;
+        left: -46vw;
     }
 
-    .input-section {
-        flex-direction: column; /* 入力セクションを縦に並べる */
-    }
-
-    button {
-        font-size: 1rem; /* ボタンのフォントサイズを調整 */
-        width: 10rem;
-        height: 5rem;
-    }
-
-    .box {
-        width: 8rem;
-        height: 16rem;
-    }
-
-    .calendar-view .water .filled {
-        color: #b3e5fc;
-    }
-
-    .calendar-view .staple .filled {
-        color: #fff9c4;
-    }
-
-    .calendar-view .side2 .filled {
-        color: #dcedc8;
-    }
-}
-
-/* モバイル用 */
-@media (max-width: 768px) {
-    /* カレンダーの列数は変更しない */
     .calendar-view {
-        grid-template-columns: repeat(7, 1fr); /* 7列固定 */
+        transform: scale(0.9); /* 1.2倍に拡大 */
+        transform-origin: top left; /* 拡大の基準を左上に設定 */
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 0;
+        width: 100%;
+        height: 80%;
+        margin-bottom: 5vw;
     }
-
-    button {
-        font-size: 1rem; /* ボタンのフォントサイズを調整 */
-        width: 12rem;
-        height: 6rem;
-    }
-
-    .box {
-        width: 10rem;
-        height: 20rem;
-    }
-
-    #larr, #larr2 {
-        font-size: 3rem; /* 戻るボタンのフォントサイズを調整 */
-        left: 2rem; /* 左に移動 */
-    }
-
-    #current-date, #selected-date {
-        font-size: 5rem; /* 日付のフォントサイズを調整 */
-    }
-}
-
-/* 超小型モバイル用 */
-@media (max-width: 480px) {
-    /* カレンダーの列数は変更しない */
-    .calendar-view {
-        grid-template-columns: repeat(7, 1fr); /* 7列固定 */
-    }
-
-    button {
-        font-size: 2rem;
-        width: 15rem;
-        height: 8rem;
-    }
-
-    .box {
-        width: 12rem;
-        height: 24rem;
-    }
-
-    #larr, #larr2 {
-        font-size: 4rem; /* 戻るボタンのフォントサイズを調整 */
-    }
-
-    #current-date, #selected-date {
-        font-size: 6rem; /* 日付のフォントサイズを調整 */
-    }
-
-    .box-container {
-        flex-direction: column; /* ボックスを縦に並べる */
+    .box-display span {
+        font-size: 3vw;
     }
 }
