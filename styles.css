@@ -1,4 +1,4 @@
-/* ベースのスタイル */
+/* 基本のスタイル */
 body {
     text-align: center;
     font-family: Arial, sans-serif;
@@ -10,7 +10,7 @@ h1, h2 {
 }
 
 h3 {    
-    font-size: 1.2vw;     
+    font-size: 1.2rem; /* vwからremに変更して安定させる */
     margin: 0;          
     padding: 0;         
 }
@@ -33,32 +33,29 @@ a {
 /* カレンダー表示 */
 .calendar-view {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1fr); /* 常に7列に固定 */
     gap: 0;
     width: 100%;
-    height: 80%;
     margin-bottom: 5vw;
 }
 
 .day {
-    border: 0.1px solid #ccc;
-    padding-top: 0.5vw;
-    padding-bottom: 0.5vw;
-    padding-left: 0.5vw;
-    padding-right: 0;
+    border: 1px solid #ccc;
+    padding: 1rem;
     text-align: left;
     cursor: pointer;
 }
 
 .current-day {
-    border: 0.3vw solid red; 
+    border: 2px solid red; 
 }
 
 button {
     writing-mode: horizontal-tb;
-    font-size: 0.7vw;
-    width: 3vw;
-    height: 1.5vw;
+    font-size: 1rem; /* 固定のフォントサイズ */
+    width: auto;
+    height: auto;
+    padding: 0.5rem 1rem;
 }
 
 .button {
@@ -69,12 +66,12 @@ button {
 }
 
 .box-display {
-    margin-top: 0.2vw;
+    margin-top: 1rem;
     text-align: center;
 }
 
 .box-display span {
-    font-size: 0.5vw;
+    font-size: 1rem;
 }
 
 .empty {
@@ -92,27 +89,24 @@ button {
 }
 
 .input-section {
-    margin: 0px; 
-    padding: 0px;
-    gap: 0;
+    margin: 0; 
+    padding: 0;
+    gap: 1rem;
     display: flex; 
-    align-items: center; 
+    flex-wrap: wrap; /* 横並びから縦並びへ変更 */
     justify-content: center; 
 }
 
 .box-container {
     display: flex; 
     justify-content: center; 
-    gap: 0.2vw; 
-    margin-top: 0; 
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
+    gap: 1rem; 
+    margin-top: 1rem;
 }
 
 .box {
-    width: 2.2vw; 
-    height: 4.4vw;
+    width: 4rem;  /* 固定サイズに変更 */
+    height: 8rem;
     margin-top: 5%; 
     background-color: #ccc;  
     cursor: pointer; 
@@ -194,7 +188,7 @@ button {
 }
 
 #triangle1, #triangle2 {
-    font-size: 1vw;
+    font-size: 1rem;
     margin: 0;
 }
 
@@ -213,8 +207,8 @@ button {
 }
 
 .larr {
-    font-size: 2vw;
-    margin: 0.2vw;
+    font-size: 2rem;
+    margin: 0.2rem;
     position: absolute;
     top: 2vw;
     left: 5vw;
@@ -222,8 +216,9 @@ button {
 
 /* レスポンシブデザイン */
 @media (max-width: 1024px) {
+    /* カレンダーの列数は変更しない */
     .calendar-view {
-        grid-template-columns: repeat(5, 1fr); /* 画面幅に合わせてカレンダーの列数を減らす */
+        grid-template-columns: repeat(7, 1fr); /* 7列固定 */
     }
 
     .name-water,
@@ -241,14 +236,14 @@ button {
     }
 
     button {
-        font-size: 1vw; /* ボタンのフォントサイズを調整 */
-        width: 10vw;
-        height: 5vw;
+        font-size: 1rem; /* ボタンのフォントサイズを調整 */
+        width: 10rem;
+        height: 5rem;
     }
 
     .box {
-        width: 6vw;
-        height: 12vw;
+        width: 8rem;
+        height: 16rem;
     }
 
     .calendar-view .water .filled {
@@ -266,54 +261,56 @@ button {
 
 /* モバイル用 */
 @media (max-width: 768px) {
+    /* カレンダーの列数は変更しない */
     .calendar-view {
-        grid-template-columns: repeat(3, 1fr); /* カレンダーを3列にする */
+        grid-template-columns: repeat(7, 1fr); /* 7列固定 */
     }
 
     button {
-        font-size: 1vw; /* ボタンのフォントサイズを調整 */
-        width: 12vw;
-        height: 6vw;
+        font-size: 1rem; /* ボタンのフォントサイズを調整 */
+        width: 12rem;
+        height: 6rem;
     }
 
     .box {
-        width: 8vw;
-        height: 16vw;
+        width: 10rem;
+        height: 20rem;
     }
 
     #larr, #larr2 {
-        font-size: 3vw; /* 戻るボタンのフォントサイズを調整 */
-        left: 2vw; /* 左に移動 */
+        font-size: 3rem; /* 戻るボタンのフォントサイズを調整 */
+        left: 2rem; /* 左に移動 */
     }
 
     #current-date, #selected-date {
-        font-size: 5vw; /* 日付のフォントサイズを調整 */
+        font-size: 5rem; /* 日付のフォントサイズを調整 */
     }
 }
 
 /* 超小型モバイル用 */
 @media (max-width: 480px) {
+    /* カレンダーの列数は変更しない */
     .calendar-view {
-        grid-template-columns: 1fr; /* 1列に */
+        grid-template-columns: repeat(7, 1fr); /* 7列固定 */
     }
 
     button {
-        font-size: 2vw;
-        width: 15vw;
-        height: 8vw;
+        font-size: 2rem;
+        width: 15rem;
+        height: 8rem;
     }
 
     .box {
-        width: 10vw;
-        height: 20vw;
+        width: 12rem;
+        height: 24rem;
     }
 
     #larr, #larr2 {
-        font-size: 4vw; /* 戻るボタンのフォントサイズを調整 */
+        font-size: 4rem; /* 戻るボタンのフォントサイズを調整 */
     }
 
     #current-date, #selected-date {
-        font-size: 6vw; /* 日付のフォントサイズを調整 */
+        font-size: 6rem; /* 日付のフォントサイズを調整 */
     }
 
     .box-container {
