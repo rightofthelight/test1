@@ -2,6 +2,8 @@ const calendar = document.getElementById("calendar");
 const inputPage = document.getElementById("input-page");
 const selectedDateElement = document.getElementById("selected-date");
 const currentDateElement = document.getElementById("current-date");
+const triangle1 = document.getElementById('triangle1');
+const triangle2 = document.getElementById('triangle2');
 
 const dataKey = "mealData";
 let mealData = JSON.parse(localStorage.getItem(dataKey)) || {};
@@ -102,7 +104,9 @@ function createBoxDisplay(filledCount, maxCount) {
 
 function openInputPage(day) {
     inputPage.style.display = "block";
-    calendar.style.display = "none";
+    calendar.style.display = "none";;
+   
+
 
     const now = new Date();
     const year = now.getFullYear();
@@ -120,7 +124,9 @@ function openInputPage(day) {
     // 曜日を含めて表示
     selectedDateElement.textContent = `${year}.${month}.${date} (${weekDay})`;
 
-    currentDateElement.style.display = "none"; 
+    currentDateElement.style.display = 'none'
+    triangle1.style.display = 'none'; 
+    triangle2.style.display = 'none';
 
     previousMealData = { ...mealData[day] };
 
@@ -163,9 +169,13 @@ function openInputPage(day) {
 function showCalendar() {
     inputPage.style.display = "none";
     calendar.style.display = "grid";
+   
+
     createCalendar();
    
-    currentDateElement.style.display = "block"; 
+    currentDateElement.style.display = 'block';
+    triangle1.style.display = 'block';
+    triangle2.style.display = 'block';
 }
 
 function updateInputBoxes(containerId, filledCount, maxCount) {
@@ -240,4 +250,4 @@ function saveData() {
 }
 */
 
-createCalendar();      
+createCalendar();                        
