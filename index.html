@@ -7,46 +7,54 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1></h1>
-    
-        <div id="current-date" class="current-date"></div> 
+
+        <p id="larr" class="larr"><a href="home.html">&#8592;</a></p>
+        <strong id="current-date" class="current-date"></strong> 
+        <p id="triangle1">&#9664;</p>
+        <p id="triangle2">&#9654;</p>
 
         <div id="calendar" class="calendar-view"></div>
 
         <div id="input-page" class="input-page">
-            
+            <p id="larr2" class="larr" onclick="backCalendar()">&#8592;</p>
             <h2 id="selected-date"></h2>  
 
             
             <div class="input-box">
+
             <div class="input-section">
+                <h3 class="name-water">水</h3>
                 <div id="water-boxes" class="box-container"></div>
             </div>
 
             <div class="input-section">
+                <h3 class="name-staple">主食</h3>
                 <div id="staple-boxes" class="box-container"></div>
             </div>
         
             <div class="input-section">
+                <h3 class="name-side2">副菜</h3>
                 <div id="side2-boxes" class="box-container"></div>
             </div>
 
             <div class="input-section">
+                <h3 class="name-main">主菜</h3>
                 <div id="main-boxes" class="box-container"></div>
             </div>
 
             <div class="input-section">
-                <div id="dairy-boxes" class="box-container"></div>
-                <h4></h4>
-                <div id="fruit-boxes" class="box-container"></div>  
+                <h3 class="name-dairy">牛乳</h3>
+                <div id="dairy-boxes" class="box-container"></div><h4></h4><div id="fruit-boxes" class="box-container"></div>             
             </div>
+
+            <h3 class="name-fruit">果物</h3>
+
             </div>
 
             <div class="button">
                 <button onclick="saveData()">保存</button>
-                <button onclick="backCalendar()">戻る</button>
             </div>
-            <img src="inputpage.jpg" class="img">
+            
         </div>
         <script src="script.js"></script>
     </body>
