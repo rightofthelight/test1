@@ -104,7 +104,9 @@ function createBoxDisplay(filledCount, maxCount) {
 
 function openInputPage(day) {
     inputPage.style.display = "block";
-    calendar.style.display = "none";;
+    calendar.style.display = "none";
+    triangle1.style.display = 'none'; 
+    triangle2.style.display = 'none';
    
 
 
@@ -125,8 +127,7 @@ function openInputPage(day) {
     selectedDateElement.textContent = `${year}.${month}.${date} (${weekDay})`;
 
     currentDateElement.style.display = 'none'
-    triangle1.style.display = 'none'; 
-    triangle2.style.display = 'none';
+    
 
     previousMealData = { ...mealData[day] };
 
@@ -169,13 +170,14 @@ function openInputPage(day) {
 function showCalendar() {
     inputPage.style.display = "none";
     calendar.style.display = "grid";
+    triangle1.style.display = 'block';
+    triangle2.style.display = 'block';
    
 
     createCalendar();
    
     currentDateElement.style.display = 'block';
-    triangle1.style.display = 'block';
-    triangle2.style.display = 'block';
+    
 }
 
 function updateInputBoxes(containerId, filledCount, maxCount) {
