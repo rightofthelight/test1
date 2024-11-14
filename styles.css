@@ -8,10 +8,39 @@ h1, h2{
     text-align: center;
 }
 
-h3{ 
-    left: 0px;         
+h3{    
+    font-size: 1.2vw;     
     margin: 0;          
     padding: 0;         
+}
+
+a{
+    text-decoration: none;
+}
+
+.name-water{
+    position: relative;
+    left: -15.7vw;
+}
+.name-staple{
+    position: relative;
+    left: -8vw;
+}
+.name-side2{
+    position: relative;
+    left: -9vw;
+}
+.name-main{
+    position: relative;
+    left: -10vw;
+}
+.name-dairy{
+    position: relative;
+    left: -11vw;
+}
+.name-fruit{
+    position: relative;
+    left: -15.7vw;
 }
 
 h4{
@@ -19,36 +48,46 @@ h4{
     padding: 0;
 }
 
-.current-date {
+.current-date ,#selected-date{
     text-align: center;
-    font-size: 25px; 
-    font-family: arial; 
+    font-size: 2vw; 
+    font-family:"Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif; 
     color: #333;
-    margin-bottom: 20px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    top: 5vw;
+    left: 50%;
 }
 
 .calendar-view {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 0px;
-    margin-bottom: 20px;
+    gap: 0;
+    width: 100%;
+    height: 80%;
+    margin-bottom: 5vw;
 }
 
 .day {
-    border: 1px solid #ccc;
-    padding: 10px;
+    border: 0.1px solid #ccc;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    padding-left: 0.5vw;
+    padding-right: 0;
     text-align: left;
     cursor: pointer;
 }
 
 .current-day {
-    border: 2px solid red; 
+    border: 0.3vw solid red; 
 }
+
+
 
 button{
     writing-mode: horizontal-tb;
-    font-size: 0.6vw;
-    width: 2.4vw;
+    font-size: 0.7vw;
+    width: 3vw;
     height: 1.5vw;
 }
 
@@ -56,18 +95,18 @@ button{
 .button{
     position: relative;
     text-align: center;
+
     top: 5vw;
     left: 0vw;
-
 }
 
 .box-display {
-    margin-top: 5px;
+    margin-top: 0.2vw;
     text-align: center;
 }
 
 .box-display span {
-    font-size: 12px;
+    font-size: 0.5vw;
 }
 
 .empty {
@@ -83,24 +122,11 @@ button{
     text-align: center;
 }
 
-.input-box{
-    margin: 3%;
-    position: relative;
-    position: 60% center;
-} 
-
-.img{
-    position: relative;
-    top: -20.5vw;
-    left: -2vw;
-    width: 21.5vw;
-    height: 21.5vw;
-    z-index: -1;
-}
 
 .input-section {
     margin: 0px; 
     padding: 0px;
+    gap: 0;
     display: flex; 
     align-items: center; 
     justify-content: center; 
@@ -118,8 +144,8 @@ button{
 }
 
 .box {
-    width: 1.3vw; 
-    height: 2.6vw;
+    width: 2.2vw; 
+    height: 4.4vw;
     margin-top: 5%; 
     background-color: #ccc;  
     cursor: pointer; 
@@ -200,3 +226,27 @@ button{
     color: blue;
 }
 
+#triangle1 ,#triangle2{
+    font-size: 1vw;
+    margin: 0;
+}
+
+#triangle1{
+    position: absolute;
+    top: 5.5vw;
+    left: 45%;
+    z-index: -1;
+}
+#triangle2{
+    position: absolute;
+    top: 5.5vw;
+    left: 54%;
+    z-index: -1;
+}
+.larr{
+    font-size: 2vw;
+    margin: 0.2vw;
+    position: absolute;
+    top: 2vw;
+    left: 5vw;
+}
